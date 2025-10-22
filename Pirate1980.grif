@@ -225,6 +225,7 @@ background.light
 		@endif
 	@endif
 command.1.1
+	@comment("go north")
 	@if @gt(@get(@concat("room.",@room,".exit.n")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.n")))
 		@look
@@ -232,6 +233,7 @@ command.1.1
 		@msg(message.cant_go)
 	@endif
 command.1.2
+	@comment("go south")
 	@if @gt(@get(@concat("room.",@room,".exit.s")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.s")))
 		@look
@@ -239,6 +241,7 @@ command.1.2
 		@msg(message.cant_go)
 	@endif
 command.1.3
+	@comment("go east")
 	@if @gt(@get(@concat("room.",@room,".exit.e")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.e")))
 		@look
@@ -246,6 +249,7 @@ command.1.3
 		@msg(message.cant_go)
 	@endif
 command.1.4
+	@comment("go west")
 	@if @gt(@get(@concat("room.",@room,".exit.w")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.w")))
 		@look
@@ -253,6 +257,7 @@ command.1.4
 		@msg(message.cant_go)
 	@endif
 command.1.5
+	@comment("go up")
 	@if @gt(@get(@concat("room.",@room,".exit.u")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.u")))
 		@look
@@ -260,6 +265,7 @@ command.1.5
 		@msg(message.cant_go)
 	@endif
 command.1.6
+	@comment("go down")
 	@if @gt(@get(@concat("room.",@room,".exit.d")),0) @then
 		@goto(@get(@concat("room.",@room,".exit.d")))
 		@look
@@ -267,25 +273,25 @@ command.1.6
 		@msg(message.cant_go)
 	@endif
 command.1.7
-	@comment("Cmd 131 - go sta")
+	@comment("Cmd 131 - go stairs")
 	@if @here(0) @and @isroom(1) @then
 		@goto(2)
 		@look
 	@endif
 command.1.8
-	@comment("Cmd 27 - go pas")
+	@comment("Cmd 27 - go passage")
 	@if @here(4) @then
 		@goto(3)
 		@look
 	@endif
 command.1.9
-	@comment("Cmd 56 - go hal")
+	@comment("Cmd 56 - go hall")
 	@if @here(19) @then
 		@goto(16)
 		@look
 	@endif
 command.1.13
-	@comment("Cmd 29 - go win")
+	@comment("Cmd 29 - go window")
 	@if @here(1) @then
 		@goto(5)
 		@look
@@ -294,7 +300,7 @@ command.1.13
 		@look
 	@endif
 command.1.15
-	@comment("Cmd 137 - go mon")
+	@comment("Cmd 137 - go monastary")
 	@if @here(56) @then
 		@goto(25)
 		@look
@@ -309,38 +315,38 @@ command.1.24
 		@msg(message.51)
 	@endif
 command.1.33
-	@comment("Cmd 39 - go sha")
+	@comment("Cmd 39 - go shack")
 	@if @here(16) @then
 		@goto(9)
 		@look
 	@endif
 command.1.35
-	@comment("Cmd 68 - go cav")
+	@comment("Cmd 68 - go cave")
 	@if @isroom(14) @then
 		@goto(7)
 		@set(value.flag.dark,true)
 		@look
 	@endif
 command.1.36
-	@comment("Cmd 112 - go pat")
+	@comment("Cmd 112 - go path")
 	@if @isroom(14) @then
 		@goto(18)
 		@look
 	@endif
 command.1.42
-	@comment("Cmd 99 - go boa")
+	@comment("Cmd 99 - go boat")
 	@if @here(37) @then
 		@goto(20)
 		@look
 	@endif
 command.1.44
-	@comment("Cmd 115 - go she")
+	@comment("Cmd 115 - go shed")
 	@if @here(34) @then
 		@goto(15)
 		@look
 	@endif
 command.1.45
-	@comment("Cmd 73 - go cra")
+	@comment("Cmd 73 - go crack")
 	@if @here(39) @and @carry(46) @then
 		@msg(message.18)
 		@msg(message.27)
@@ -364,7 +370,7 @@ command.1.45
 		@look
 	@endif
 command.1.48
-	@comment("Cmd 130 - go lag")
+	@comment("Cmd 130 - go lagoon")
 	@if @here(51) @then
 		@goto(24)
 		@look
@@ -376,7 +382,7 @@ command.1.50
 		@look
 	@endif
 command.1.51
-	@comment("Cmd 100 - go sho")
+	@comment("Cmd 100 - go shore")
 	@if @isroom(20) @and @true(@get(value.flag.4)) @and @here(12) @then
 		@goto(21)
 		@drop(12)
